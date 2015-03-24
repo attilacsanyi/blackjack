@@ -2,19 +2,31 @@
     'use strict';
 
     angular
-        .module('seedBlackjack')
-        .controller('AppController', AppController);
+    .module('seedBlackjack')
+    .controller('AppController', AppController);
 
-    AppController.$inject = ['$log'];
+    AppController.$inject = ['$router', '$location', '$log'];
 
     //////////////////////////////
     // APP CONTROLLER
-    function AppController($log) {
-        //var vm = this;
-
+    function AppController($router, $location, $log) {
+        var vm = this;
         $log.info('Init AppController');
 
-        this.title = 'Seed Blackjack';
+        vm.title = 'Seed Blackjack';
+
+        $router.config([
+          {
+            path: '/',
+            component: 'dealer'
+            
+          },
+          {
+            path: '/player/:name',
+            component: 'player'
+          }
+        ]);
+        $location.path('/'); //set default otherwise is blank
 
     }
 

@@ -46,7 +46,7 @@ gulp.task('clean', function() {
 
 // Lint JS codebase
 gulp.task('lint', function() {
-  gulp.src(['client/**/*.js', '!client/bower_components/**/*.js'])
+  gulp.src(['client/**/*.js', '!client/bower_components/**/*.js', '!client/assets/lib/**/*.js'])
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
     .pipe(jshint.reporter('fail'));

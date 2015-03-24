@@ -17,9 +17,11 @@
   <![endif]-->
 </head>   
 
-<body data-ng-controller="AppController as app" data-ng-cloak>
+<body data-ng-controller="AppController as app">
 
   <p data-ng-bind="app.title"></p>
+
+  <div data-ng-viewport></div>
 
   <!-- VENDORS -->
 
@@ -28,10 +30,14 @@
 
   <!-- Angular -->
   <script src="bower_components/angular/angular.js"></script>
+  <script src="assets/lib/router.es5.js"></script>
 
   <!-- ANGULAR APP -->
   <script src="app.module.js"></script>
   <script src="app.controller.js"></script>
+
+  <script src="components/dealer/DealerController.js"></script>
+  <script src="components/player/PlayerController.js"></script>
 
 </body>
 </html>
