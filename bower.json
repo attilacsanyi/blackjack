@@ -1,0 +1,12 @@
+{
+  "name": "seed-blackjack",
+  "description": "Seed Blackjack Test",
+  "version": "1.0.0",
+  "homepage": "https://github.com/attilacsanyi/seed-blackjack",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.3.14",
+    "jquery": "2.1.3"
+  }
+}
