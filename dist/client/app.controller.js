@@ -1,1 +1,0 @@
-!function(){"use strict";function l(l){l.info("Init AppController"),this.title="Seed Blackjack"}angular.module("seedBlackjack").controller("AppController",l),l.$inject=["$log"]}();
