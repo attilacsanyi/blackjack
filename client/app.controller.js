@@ -13,7 +13,7 @@
         var vm = this;
         $log.info('Init AppController');
 
-        vm.title = 'Seed Blackjack Test';
+        vm.title = 'Seed Blackjack';
 
 
         // Define App Routing

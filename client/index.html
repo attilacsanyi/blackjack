@@ -10,6 +10,9 @@
 
   <title>Seed Blackjack</title>
 
+  <!-- Bootstrap -->
+  <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
   <script src="js/html5shiv.js"></script>
@@ -19,14 +22,31 @@
 
 <body data-ng-controller="AppController as app">
 
-  <h1 data-ng-bind="app.title"></h1>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" data-ng-link="blackjack()">
+          <img alt="Blackjack" src="assets/img/favicon.png">
+        </a>
+      </div>
+      <div>
+        <ul class="nav navbar-nav">
+          <li><a data-ng-bind="app.title"></a></li>
+        </ul>
+      </div>
+      
+    </div>
+  </nav>
 
-  <div data-ng-viewport="default"></div>
+  <div data-ng-viewport="default" class="container"></div>
 
   <!-- VENDORS -->
 
   <!-- JQuery -->
-  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
   <!-- Angular -->
   <script src="bower_components/angular/angular.js"></script>
