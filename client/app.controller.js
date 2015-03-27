@@ -13,20 +13,21 @@
         var vm = this;
         $log.info('Init AppController');
 
-        vm.title = 'Seed Blackjack';
+        vm.title = 'Seed Blackjack Test';
 
+
+        // Define App Routing
         $router.config([
           {
             path: '/',
-            component: 'dealer'
-            
+            component: 'blackjack'
           },
           {
-            path: '/player/:name',
+            path: '/players/:name',
             component: 'player'
           }
         ]);
-        $location.path('/'); //set default otherwise is blank
+        $location.path('/');
 
     }
 

@@ -1,0 +1,14 @@
+<p>Operations:</p>
+<ul>
+  <li><button data-ng-click="blackjack.startGame()" data-ng-disabled="blackjack.gameStarted">Start Game</button></li>
+  <li><button data-ng-click="blackjack.addPlayer()" data-ng-disabled="!blackjack.gameStarted || blackjack.playerAdded">Add Player</button></li>
+</ul>
+
+<p>Players:</p>
+<ul>
+  <li data-ng-repeat="player in players = (blackjack.players | filter : { isDealer: false})">
+    <a data-ng-link="player({ name: player.getName() })" data-ng-bind="player.getName()"></a>
+  </li>
+  <li data-ng-show="players.length == 0">No players</li>
+</ul>
+

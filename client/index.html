@@ -19,9 +19,9 @@
 
 <body data-ng-controller="AppController as app">
 
-  <p data-ng-bind="app.title"></p>
+  <h1 data-ng-bind="app.title"></h1>
 
-  <div data-ng-viewport></div>
+  <div data-ng-viewport="default"></div>
 
   <!-- VENDORS -->
 
@@ -32,12 +32,20 @@
   <script src="bower_components/angular/angular.js"></script>
   <script src="assets/lib/router.es5.js"></script>
 
-  <!-- ANGULAR APP -->
+  <!-- Angular App -->
   <script src="app.module.js"></script>
   <script src="app.controller.js"></script>
 
-  <script src="components/dealer/DealerController.js"></script>
+  <!-- Angular Services -->
+  <script src="services/BlackjackService.js"></script>
+
+  <!-- Angular Components -->
+  <script src="components/blackjack/BlackjackController.js"></script>
   <script src="components/player/PlayerController.js"></script>
+
+  <!-- Angular Models -->
+  <script src="models/Blackjack.js"></script>
+  <script src="models/Player.js"></script>
 
 </body>
 </html>
