@@ -21,6 +21,7 @@
         // Private methods 
 
         function initCards () {
+            $log.info('Initialized Deck with cards');
             var blackJackCards = [];
             var patterns = ['Heart', 'Tile', 'Clover', 'Pike'];
             var types = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King', 'Ace'];

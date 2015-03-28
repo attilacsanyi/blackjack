@@ -15,15 +15,15 @@
         var game;
 
         var service = {
-            getPlayers: getPlayers,
-            startGame: startGame,
+            players: getPlayers,
+            init: initGame,
             addPlayer: addPlayer
         };
         return service;
 
         // Implementation
 
-        function startGame() {
+        function initGame() {
 
             // Define Blackjack Game 
             game = new Blackjack(2, 3);
