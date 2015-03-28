@@ -10,8 +10,11 @@
 
   <title>Seed Blackjack</title>
 
-  <!-- Bootstrap -->
+  <!-- Bootstrap CSS -->
   <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- App style -->
+  <link href="assets/css/style.css" rel="stylesheet">
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -31,7 +34,12 @@
       </div>
       <div>
         <ul class="nav navbar-nav">
-          <li><a data-ng-bind="app.title"></a></li>
+          <li><a data-ng-link="blackjack()" data-ng-bind="app.title"></a></li>
+          <li class="active">
+            <a href="" data-ng-click="app.openNewGameModal('sm')">
+              <i class="glyphicon glyphicon-pencil"></i> New Game
+            </a>
+          </li>
         </ul>
       </div>
       
@@ -52,6 +60,9 @@
   <script src="bower_components/angular/angular.js"></script>
   <script src="assets/lib/router.es5.js"></script>
 
+  <!-- Angular Bootstrap -->
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
   <!-- Angular App -->
   <script src="app.module.js"></script>
   <script src="app.controller.js"></script>
@@ -68,6 +79,9 @@
   <script src="models/Player.js"></script>
   <script src="models/Deck.js"></script>
   <script src="models/Card.js"></script>
+
+  <!-- Modals -->
+  <script src="modals/NewGameModalController.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,5 @@
+/* Validation error message next to the label */
+.control-message {
+  color: #a94442;
+  float: right;
+}

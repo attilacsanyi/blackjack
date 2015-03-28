@@ -15,18 +15,18 @@
         var game;
 
         var service = {
-            players: getPlayers,
-            init: initGame,
+            getPlayers: getPlayers,
+            initGame: initGame,
             addPlayer: addPlayer
         };
         return service;
 
         // Implementation
 
-        function initGame() {
+        function initGame(numOfPlayers, numOfRounds) {
 
             // Define Blackjack Game 
-            game = new Blackjack(2, 3);
+            game = new Blackjack(numOfPlayers, numOfRounds);
 
             // Create a dealer and add to the game
             var dealer = new Player('Dealer', true);

@@ -10,7 +10,10 @@
   angular.module('seedBlackjack', [
 
     // Angular new router
-    'ngNewRouter'
+    'ngNewRouter',
+
+    // Bootstrap UI Angular components
+    'ui.bootstrap'
     
   ]);
 

@@ -1,0 +1,41 @@
+<!-- New Game Form -->
+<form name="newGameForm" data-ng-submit="vm.createNewGame()">
+
+  <!-- Form Header -->
+  <div class="modal-header">
+    <h4 class="modal-title">New Game</h4>
+  </div>
+
+  <!-- Form Body -->
+  <div class="modal-body">
+
+    <!-- Num of players -->
+    <div data-ng-class="vm.getValidationClass(newGameForm.numOfPlayers)" class="form-group">
+      <label for="numOfPlayers" class="control-label">Number of players</label>
+      <span data-ng-show="vm.showValidation(newGameForm.numOfPlayers, 'required')" class="control-message"><small>required</small></span>
+      <span data-ng-show="vm.showValidation(newGameForm.numOfPlayers, 'number')" class="control-message"><small>must be number</small></span>
+      <span data-ng-show="vm.showValidation(newGameForm.numOfPlayers, 'max')" class="control-message"><small>max 6 players</small></span>
+      <span data-ng-show="vm.showValidation(newGameForm.numOfPlayers, 'min')" class="control-message"><small>min 1 player</small></span>
+      <input name="numOfPlayers" type="number" data-ng-model="vm.numOfPlayers" required data-ng-max="6" data-ng-min="1" placeholder="Number of players" class="form-control input-lg">
+    </div>
+
+    <!-- Num of rounds -->
+    <div data-ng-class="vm.getValidationClass(newGameForm.numOfRounds)" class="form-group">
+      <label for="numOfRounds" class="control-label">Number of rounds</label>
+      <span data-ng-show="vm.showValidation(newGameForm.numOfRounds, 'required')" class="control-message"><small>required</small></span>
+      <span data-ng-show="vm.showValidation(newGameForm.numOfRounds, 'number')" class="control-message"><small>must be number</small></span>
+      <span data-ng-show="vm.showValidation(newGameForm.numOfRounds, 'max')" class="control-message"><small>max 3 rounds</small></span>
+      <span data-ng-show="vm.showValidation(newGameForm.numOfRounds, 'min')" class="control-message"><small>min 1 round</small></span>
+      <input name="numOfRounds" type="number" data-ng-model="vm.numOfRounds" required data-ng-max="3" data-ng-min="1" placeholder="Number of rounds" class="form-control input-lg">
+    </div>
+
+  </div>
+
+  <!-- Form Footer -->
+  <div class="modal-footer">
+    <p>Don't know the rules? <a href="http://en.wikipedia.org/wiki/Blackjack">Check them here.</a></p>
+
+    <!-- New Game Button -->
+    <input type="submit" data-ng-disabled="!vm.newGameFormValid(newGameForm)" value="New Game" class="btn btn-success btn-block btn-lg">
+  </div>
+</form>

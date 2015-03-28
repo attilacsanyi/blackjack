@@ -12,8 +12,6 @@
     function BlackjackModel($log, Deck) {
 
         // Private properties
-        var numOfPlayers;
-        var numOfRounds;
         var players = [];
 
         // Constructor
