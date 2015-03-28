@@ -12,10 +12,15 @@
     function NewGameModalController($modalInstance, BlackjackService, $log) {
         var vm = this;
 
+        vm.playerNames = [];
+
         // CREATE NEW GAME
 
         var createNewGame = function() {
             BlackjackService.initGame(vm.numOfPlayers, vm.numOfRounds);
+
+            BlackjackService.addPlayers(vm.playerNames);
+
             $modalInstance.close(BlackjackService.isGameStarted());
         };
         vm.createNewGame = createNewGame;
@@ -39,6 +44,13 @@
         // Show related validation message of a field based on form validation rules
         vm.showValidation = function (ngModelController, error) {
             return ngModelController.$error[error];
+        };
+
+        // Helpers
+
+        vm.getTimes = function (n) {
+            var repeat = (n) ? n : 0;
+            return new Array(repeat);
         };
     }
 

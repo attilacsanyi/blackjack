@@ -18,7 +18,7 @@
             isGameStarted: isGameStarted,
             getPlayers: getPlayers,
             initGame: initGame,
-            addPlayer: addPlayer
+            addPlayers: addPlayers
         };
         return service;
 
@@ -34,11 +34,10 @@
             game.addPlayer(dealer);
         }
 
-        function addPlayer() {
-
-            // Define new player then add to the game
-            var player1 = new Player('John Seed');
-            game.addPlayer(player1);
+        function addPlayers(playerNames) {
+            for (var i = 0; i < playerNames.length; i++) {
+                game.addPlayer(new Player(playerNames[i]));
+            }
         }
 
         function getPlayers() {

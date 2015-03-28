@@ -29,6 +29,7 @@
         };
 
         // Getters
+
         Blackjack.prototype.getPlayers = function () {
             return players;
         };

@@ -19,6 +19,18 @@
       <input name="numOfPlayers" type="number" data-ng-model="vm.numOfPlayers" required data-ng-max="6" data-ng-min="1" placeholder="Number of players" class="form-control input-lg">
     </div>
 
+    <div data-ng-show="newGameForm.numOfPlayers.$valid" class="form-group">
+      <h4>Please fill the player names</h4>
+    </div>
+
+    <!-- Player names -->
+    <div data-ng-repeat="n in vm.getTimes(vm.numOfPlayers) track by $index"
+         data-ng-show="newGameForm.numOfPlayers.$valid" data-ng-class="vm.getValidationClass(newGameForm.player{{$index}})" class="form-group col-sm-11 col-sm-offset-1">
+      <label for="player{{$index}}" class="control-label">Player {{ $index + 1 }}</label>
+      <span data-ng-show="vm.showValidation(newGameForm.player{{$index}}, 'required')" class="control-message"><small>required</small></span>
+      <input name="player{{$index}}" type="text" data-ng-model="vm.playerNames[$index]" required placeholder="Player {{ $index + 1 }} name" class="form-control input-md">
+    </div>
+
     <!-- Num of rounds -->
     <div data-ng-class="vm.getValidationClass(newGameForm.numOfRounds)" class="form-group">
       <label for="numOfRounds" class="control-label">Number of rounds</label>

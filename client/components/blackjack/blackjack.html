@@ -1,15 +1,18 @@
- <div data-ng-show="blackjack.game.isGameStarted()"> 
-  <p>Operations:</p>
-  <ul>
-    <li><button data-ng-click="blackjack.game.addPlayer()" class="btn btn-default btn-sm">Add Player</button></li>
-  </ul>
+<div data-ng-hide="blackjack.game.isGameStarted()">
+  <ol>
+    <li>Click on the <em>New Game</em> link above or <a data-ng-click="app.openNewGameModal('sm')"><strong>here</strong></a></li>
+    <li>Define the <strong>number of players</strong></li>
+    <li>Finally that how many <strong>rounds</strong> you would like to play</li>
+  </ol>
+</div>
 
-  <p>Players:</p>
-  <ul>
+<div data-ng-show="blackjack.game.isGameStarted()"> 
+  <h3>Number of players: {{players.length}}</h3>
+  <ol>
     <li data-ng-repeat="player in players = (blackjack.game.getPlayers() | filter : { isDealer: false})">
       <a data-ng-link="player({ name: player.getName() })" data-ng-bind="player.getName()"></a>
     </li>
     <li data-ng-show="players.length == 0">No players</li>
-  </ul>
+  </ol>
 </div>
 
