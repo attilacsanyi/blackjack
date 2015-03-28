@@ -18,7 +18,8 @@
             isGameStarted: isGameStarted,
             getPlayers: getPlayers,
             initGame: initGame,
-            addPlayers: addPlayers
+            addPlayers: addPlayers,
+            getPlayerById: getPlayerById
         };
         return service;
 
@@ -30,14 +31,25 @@
             game = new Blackjack(numOfPlayers, numOfRounds);
 
             // Create a dealer and add to the game
-            var dealer = new Player('Dealer', true);
+            var dealer = new Player(0, 'Dealer', true);
             game.addPlayer(dealer);
         }
 
         function addPlayers(playerNames) {
             for (var i = 0; i < playerNames.length; i++) {
-                game.addPlayer(new Player(playerNames[i]));
+                game.addPlayer(new Player(i + 1, playerNames[i]));
             }
+        }
+
+        function getPlayerById(playerId) {
+            var player;
+            for (var i = 0; i < getPlayers().length; i++) {
+                player = getPlayers()[i];
+                if (player.getId() == playerId) {
+                    return player;
+                }
+            }
+            return new Player(999, 'undefined');
         }
 
         function getPlayers() {

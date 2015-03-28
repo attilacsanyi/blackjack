@@ -17,7 +17,8 @@
         var cards = [];     // active card:Card on the players hand
 
         // Constructor
-        var Player = function (name, isDealer) {
+        var Player = function (id, name, isDealer) {
+            this.id = id;
             this.name = name;
             this.isDealer = isDealer || false;
         };
@@ -43,6 +44,10 @@
         };
 
         // Getters
+
+        Player.prototype.getId = function () {
+            return this.id;
+        };
 
         Player.prototype.isStand = function () {
             return this.isStand;

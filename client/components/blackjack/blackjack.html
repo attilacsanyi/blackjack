@@ -10,7 +10,7 @@
   <h3>Number of players: {{players.length}}</h3>
   <ol>
     <li data-ng-repeat="player in players = (blackjack.game.getPlayers() | filter : { isDealer: false})">
-      <a data-ng-link="player({ name: player.getName() })" data-ng-bind="player.getName()"></a>
+      <a data-ng-link="player({ id: player.getId() })" data-ng-bind="player.getName()"></a>
     </li>
     <li data-ng-show="players.length == 0">No players</li>
   </ol>

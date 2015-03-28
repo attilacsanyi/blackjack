@@ -1,5 +1,6 @@
 <p>Player details:</p>
 <ul>
-  <li data-ng-bind="'Name: ' + player.playerName"></li>
+  <li data-ng-bind="'Name: ' + player.self.getName()"></li>
+  <li data-ng-bind="'Card Score: ' + player.self.getCardScore()"></li>
 </ul>
 <a data-ng-link="blackjack()">Back</a>

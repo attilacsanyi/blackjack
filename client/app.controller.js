@@ -25,7 +25,7 @@
             component: 'blackjack'
           },
           {
-            path: '/players/:name',
+            path: '/players/:id',
             component: 'player'
           }
         ]);
