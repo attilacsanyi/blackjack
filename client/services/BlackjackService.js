@@ -18,6 +18,7 @@
             isGameStarted: isGameStarted,
             getPlayers: getPlayers,
             initGame: initGame,
+            saveGame: saveGame,
             addPlayers: addPlayers,
             getPlayerById: getPlayerById
         };
@@ -33,6 +34,10 @@
             // Create a dealer and add to the game
             var dealer = new Player(0, 'Dealer', true);
             game.addPlayer(dealer);
+        }
+
+        function saveGame(numOfPlayers, numOfRounds) {
+            $log.warn('Not implemented yet');
         }
 
         function addPlayers(playerNames) {

@@ -5,11 +5,11 @@
     .module('seedBlackjack')
     .controller('AppController', AppController);
 
-    AppController.$inject = ['$scope', '$router', '$location', '$log', '$modal'];
+    AppController.$inject = ['$scope', '$router', '$location', '$log', '$modal', 'BlackjackService'];
 
     //////////////////////////////
     // APP CONTROLLER
-    function AppController($scope, $router, $location, $log, $modal) {
+    function AppController($scope, $router, $location, $log, $modal, BlackjackService) {
         var vm = this;
         $log.info('Init AppController');
 
@@ -50,6 +50,12 @@
                 $log.info('Closed New Game modal with reason: ' + JSON.stringify(reason));
             });
         };
+
+        // Save Game
+        var saveGame = function () {
+            BlackjackService.saveGame();
+        };
+        vm.saveGame = saveGame;
 
     }
 

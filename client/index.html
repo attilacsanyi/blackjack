@@ -50,6 +50,11 @@
               <i class="glyphicon glyphicon-pencil"></i> New Game
             </a>
           </li>
+          <li data-ng-hide="!app.isGameStarted" class="disabled">
+            <a href="" data-ng-click="app.saveGame()">
+              <i class="glyphicon glyphicon-floppy-save"></i> Save Game
+            </a>
+          </li>
         </ul>
       </div>
 
