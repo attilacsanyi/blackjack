@@ -16,7 +16,7 @@
 
         var createNewGame = function() {
             BlackjackService.initGame(vm.numOfPlayers, vm.numOfRounds);
-            $modalInstance.close();
+            $modalInstance.close(BlackjackService.isGameStarted());
         };
         vm.createNewGame = createNewGame;
 

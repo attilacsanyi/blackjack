@@ -15,6 +15,7 @@
         var game;
 
         var service = {
+            isGameStarted: isGameStarted,
             getPlayers: getPlayers,
             initGame: initGame,
             addPlayer: addPlayer
@@ -42,6 +43,10 @@
 
         function getPlayers() {
             return game ? game.getPlayers() : []; 
+        }
+
+        function isGameStarted() {
+            return game; 
         }
     }
 

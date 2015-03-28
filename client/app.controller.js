@@ -13,7 +13,9 @@
         var vm = this;
         $log.info('Init AppController');
 
+        // View models
         vm.title = 'Seed Blackjack';
+        vm.isGameStarted = false;
 
 
         // Define App Routing
@@ -42,8 +44,8 @@
                 size: size
             });
 
-            newGameModalInstance.result.then(function () {
-
+            newGameModalInstance.result.then(function (isGameStarted) {
+                vm.isGameStarted = isGameStarted;
             }, function (reason) {
                 $log.info('Closed New Game modal with reason: ' + JSON.stringify(reason));
             });
