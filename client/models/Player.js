@@ -28,6 +28,10 @@
             return (anotherPlayer.isDealer() && this.getCardScore() == anotherPlayer.getCardScore()) ? true : false;
         };
 
+        Player.prototype.isBust = function () {
+            return (this.getCardScore() > 21) ? true : false;
+        };
+
         Player.prototype.getCardScore = function () {
             var cardScore = 0;
             if (cards) {

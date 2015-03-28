@@ -5,11 +5,11 @@
         .module('seedBlackjack')
         .service('Blackjack', BlackjackModel);
 
-    BlackjackModel.$inject = ['$log'];
+    BlackjackModel.$inject = ['$log', 'Deck'];
 
     //////////////////////////////
     // BLACKJACK GAME
-    function BlackjackModel($log) {
+    function BlackjackModel($log, Deck) {
 
         // Private properties
         var numOfPlayers;
@@ -21,6 +21,7 @@
             $log.info('Blackjack created');
             this.numOfPlayers = numOfPlayers;
             this.numOfRounds = numOfRounds;
+            this.deck = new Deck();
         };
 
         // Add new player:Player

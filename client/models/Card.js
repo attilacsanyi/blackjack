@@ -23,15 +23,15 @@
 
         // Getters
 
-        CardModel.prototype.getValue = function () {
+        Card.prototype.getValue = function () {
             return this.value;
         };
 
-        CardModel.prototype.getName = function () {
+        Card.prototype.getName = function () {
             return this.name;
         };
 
-        return CardModel;
+        return Card;
     }
 
 })();
