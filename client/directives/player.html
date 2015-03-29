@@ -1,19 +1,26 @@
 <div class="panel" data-ng-class="{'panel-success': !vm.player.isBust(), 'panel-danger': vm.player.isBust()}">
+
+  <!-- Player Name -->
   <div class="panel-heading">
     <a data-ng-link="player({ id: vm.player.getId() })">
       <h3 class="panel-title" data-ng-bind="vm.player.getName()"></h3>
     </a>
     <p data-ng-show="vm.player.isBust()"> Busted</p>
   </div>
+
+  <!-- Player details -->
   <div class="panel-body">
     <ul>
       <li data-ng-bind="'Card Score: ' + vm.player.getCardScore()"></li>
     </ul>
   </div>
+
+  <!-- Card operations -->
   <div class="panel-footer">
     <div class="btn-group" role="group" aria-label="card operations">
       <button type="button" data-ng-click="vm.hit()" data-ng-disabled="vm.player.isBust()" class="btn btn-default">Hit</button>
       <button type="button" class="btn btn-default" data-ng-disabled="vm.player.isBust()">Stand</button>
     </div>
   </div>
+  
 </div>

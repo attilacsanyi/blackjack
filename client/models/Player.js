@@ -11,8 +11,6 @@
     // PLAYER
     function PlayerModel($log) {
 
-        // Private properties  
-
         // Constructor
         var Player = function (id, name, isDealer) {
             this.id = id;

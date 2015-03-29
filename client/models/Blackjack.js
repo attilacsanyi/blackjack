@@ -5,27 +5,31 @@
         .module('seedBlackjack')
         .service('Blackjack', BlackjackModel);
 
-    BlackjackModel.$inject = ['$log', 'Deck'];
+    BlackjackModel.$inject = ['$log', 'Player', 'Deck'];
 
     //////////////////////////////
     // BLACKJACK GAME
-    function BlackjackModel($log, Deck) {
-
-        // Private properties
-        var players = [];
+    function BlackjackModel($log, Player, Deck) {
 
         // Constructor
         var Blackjack = function (numOfPlayers, numOfRounds) {
             $log.info('Blackjack created');
             this.numOfPlayers = numOfPlayers;
             this.numOfRounds = numOfRounds;
+
+            this.players = [];
             this.deck = new Deck();
+
+            // Create a dealer and add to the game
+            $log.info('Add dealer');
+            this.dealer = new Player(0, 'Dealer', true);
+            this.players.push(this.dealer);
         };
 
         // Add new player:Player
         Blackjack.prototype.addPlayer = function (player) {
             $log.info('Add player with name: ' + player.getName());
-            players.push(player);
+            this.players.push(player);
         };
 
         Blackjack.prototype.dealCardToPlayer = function (playerId) {
@@ -39,8 +43,8 @@
 
         Blackjack.prototype.getPlayerById = function(playerId) {
             var player;
-            for (var i = 0; i < players.length; i++) {
-                player = players[i];
+            for (var i = 0; i < this.players.length; i++) {
+                player = this.players[i];
                 if (player.getId() == playerId) {
                     return player;
                 }
@@ -51,7 +55,11 @@
         // Getters
 
         Blackjack.prototype.getPlayers = function () {
-            return players;
+            return this.players;
+        };
+
+        Blackjack.prototype.getDealer = function () {
+            return this.dealer;
         };
 
         return Blackjack;

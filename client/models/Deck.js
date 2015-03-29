@@ -11,8 +11,6 @@
     // DECK
     function DeckModel($log, Card) {
 
-        // Private properties
-
         // Constructor
         var Deck = function () {
             this.cards = initCards();

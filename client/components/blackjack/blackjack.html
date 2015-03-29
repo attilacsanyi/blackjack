@@ -6,8 +6,11 @@
   </ol>
 </div>
 
-<div data-ng-show="blackjack.game.isGameStarted()"> 
-  <h3 data-ng-bind="'Number of players (' + blackjack.game.getPlayers().length + ')'"></h3>
+<div data-ng-show="blackjack.game.isGameStarted()">
+  <h3>Dealer</h3>
+  <div data-seed-player data-player="blackjack.game.getDealer()"></div>
+
+  <h3 data-ng-bind="'Players (' + blackjack.game.getPlayers().length + ')'"></h3>
   <div data-seed-players data-game="blackjack.game"></div>
 </div>
 

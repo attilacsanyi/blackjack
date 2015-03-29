@@ -21,6 +21,7 @@
             getPlayerById: getPlayerById,
             dealCardToPlayer: dealCardToPlayer,
             getPlayers: getPlayers,
+            getDealer: getDealer,
             isGameStarted: isGameStarted
         };
         return service;
@@ -28,13 +29,7 @@
         // Implementation
 
         function initGame(numOfPlayers, numOfRounds) {
-
-            // Define Blackjack Game 
             game = new Blackjack(numOfPlayers, numOfRounds);
-
-            // Create a dealer and add to the game
-            var dealer = new Player(0, 'Dealer', true);
-            game.addPlayer(dealer);
         }
 
         function saveGame(numOfPlayers, numOfRounds) {
@@ -57,7 +52,11 @@
         }
 
         function getPlayers() {
-            return game ? $filter('filter')(game.getPlayers(), { isDealer: false }) : []; 
+            return isGameStarted() ? $filter('filter')(game.getPlayers(), { isDealer: false }) : []; 
+        }
+
+        function getDealer() {
+            return isGameStarted() ? game.getDealer() : undefined; 
         }
 
         function isGameStarted() {
