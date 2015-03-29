@@ -1,4 +1,4 @@
 <div data-ng-repeat="player in players = (vm.game.getPlayers())">
-  <div seed-player player="player"></div>
+  <div data-seed-player data-player="player"></div>
 </div>
 <p data-ng-show="players.length == 0">No players</p>

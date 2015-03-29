@@ -47,7 +47,8 @@
         // Return a random card from the deck if not empty
         Deck.prototype.deal = function () {
             var randomIndex = Math.floor(Math.random() * this.cards.length);
-            return this.cards.splice(randomIndex, 1);
+            var selectedCards = this.cards.splice(randomIndex, 1);
+            return selectedCards[0];
         };
 
         return Deck;

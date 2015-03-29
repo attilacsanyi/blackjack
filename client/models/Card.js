@@ -12,8 +12,6 @@
     function CardModel($log) {
 
         // Private properties
-        var name;
-        var value;
 
         // Constructor
         var Card = function (name, value) {

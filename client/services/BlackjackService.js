@@ -15,12 +15,13 @@
         var game;
 
         var service = {
-            isGameStarted: isGameStarted,
-            getPlayers: getPlayers,
             initGame: initGame,
             saveGame: saveGame,
             addPlayers: addPlayers,
-            getPlayerById: getPlayerById
+            getPlayerById: getPlayerById,
+            dealCardToPlayer: dealCardToPlayer,
+            getPlayers: getPlayers,
+            isGameStarted: isGameStarted
         };
         return service;
 
@@ -47,14 +48,12 @@
         }
 
         function getPlayerById(playerId) {
-            var player;
-            for (var i = 0; i < getPlayers().length; i++) {
-                player = getPlayers()[i];
-                if (player.getId() == playerId) {
-                    return player;
-                }
-            }
-            return new Player(999, 'undefined');
+            var player = game.getPlayerById(playerId);
+            return (player) ? player :  new Player(999, 'undefined');
+        }
+
+        function dealCardToPlayer(playerId) {
+            game.dealCardToPlayer(playerId);
         }
 
         function getPlayers() {

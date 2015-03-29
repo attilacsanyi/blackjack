@@ -28,6 +28,26 @@
             players.push(player);
         };
 
+        Blackjack.prototype.dealCardToPlayer = function (playerId) {
+            $log.info('Deal card to player');
+
+            var player = this.getPlayerById(playerId);
+            if (player) {
+                player.addCard(this.deck.deal());
+            }
+        };
+
+        Blackjack.prototype.getPlayerById = function(playerId) {
+            var player;
+            for (var i = 0; i < players.length; i++) {
+                player = players[i];
+                if (player.getId() == playerId) {
+                    return player;
+                }
+            }
+            return undefined;
+        };
+
         // Getters
 
         Blackjack.prototype.getPlayers = function () {

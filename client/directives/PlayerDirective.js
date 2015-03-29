@@ -28,14 +28,15 @@
         }
     }
 
-    PlayerController.$inject = ['$log'];
+    PlayerController.$inject = ['$log', 'BlackjackService'];
 
-    function PlayerController($log) {
+    function PlayerController($log, BlackjackService) {
         var vm = this;
         $log.info('Player Directive Controller');
 
         var hit = function () {
           $log.info(vm.player.getName() +  ' was hit');
+          BlackjackService.dealCardToPlayer(vm.player.getId());
         };
         vm.hit = hit;
     }
