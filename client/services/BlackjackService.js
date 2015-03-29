@@ -5,11 +5,11 @@
         .module('seedBlackjack')
         .service('BlackjackService', BlackjackService);
 
-    BlackjackService.$inject = ['$log', 'Blackjack', 'Player'];
+    BlackjackService.$inject = ['$log', '$filter', 'Blackjack', 'Player'];
 
     //////////////////////////////
     // BLACKJACK SERVICE
-    function BlackjackService($log, Blackjack, Player) {
+    function BlackjackService($log, $filter, Blackjack, Player) {
         $log.info('Init BlackjackService');
 
         var game;
@@ -58,7 +58,7 @@
         }
 
         function getPlayers() {
-            return game ? game.getPlayers() : []; 
+            return game ? $filter('filter')(game.getPlayers(), { isDealer: false }) : []; 
         }
 
         function isGameStarted() {

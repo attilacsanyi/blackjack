@@ -1,0 +1,18 @@
+<div class="panel" data-ng-class="{'panel-success': !player.isBust(), 'panel-danger': player.isBust()}">
+  <div class="panel-heading">
+    <a data-ng-link="player({ id: player.getId() })">
+      <h3 class="panel-title" data-ng-bind="player.getName()"></h3>
+    </a>
+  </div>
+  <div class="panel-body">
+    <ul>
+      <li data-ng-bind="'Card Score: ' + player.getCardScore()"></li>
+    </ul>
+  </div>
+  <div class="panel-footer">
+    <div class="btn-group" role="group" aria-label="card operations">
+      <button type="button" class="btn btn-default">Hit</button>
+      <button type="button" class="btn btn-default">Stand</button>
+    </div>
+  </div>
+</div>

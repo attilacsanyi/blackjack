@@ -13,11 +13,6 @@
         var vm = this;
         $log.info('Init AppController');
 
-        // View models
-        vm.title = 'Seed Blackjack';
-        vm.isGameStarted = false;
-
-
         // Define App Routing
         $router.config([
           {
@@ -30,6 +25,10 @@
           }
         ]);
         $location.path('/');
+
+        // View models
+        vm.title = 'Seed Blackjack';
+        vm.isGameStarted = false;
 
         // New Game Modal
         vm.openNewGameModal = function(size) {
