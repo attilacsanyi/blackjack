@@ -18,6 +18,7 @@
             this.isDealer = isDealer || false;
             this.cards = [];                    // active cards[]:Card in the players hand
             this.score = 0;                     // after each round the score accumulated here
+            this.stand = false;
         };
 
         // Methods
@@ -48,6 +49,18 @@
             return this.score += score;
         };
 
+        Player.prototype.canHit = function () {
+            return !this.isBust() && !this.isStand();
+        };
+
+        Player.prototype.canStand = function () {
+            return !this.isBust() && !this.isStand() && this.getCardScore();
+        };
+
+        Player.prototype.setStand = function () {
+            this.stand = true;
+        };
+
         // Getters
 
         Player.prototype.getId = function () {
@@ -55,7 +68,7 @@
         };
 
         Player.prototype.isStand = function () {
-            return this.isStand;
+            return this.stand;
         };
 
         Player.prototype.getName = function () {

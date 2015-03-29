@@ -18,9 +18,9 @@
   <!-- Card operations -->
   <div class="panel-footer">
     <div class="btn-group" role="group" aria-label="card operations">
-      <button type="button" data-ng-click="vm.hit()" data-ng-disabled="vm.player.isBust()" class="btn btn-default">Hit</button>
-      <button type="button" class="btn btn-default" data-ng-disabled="vm.player.isBust()">Stand</button>
+      <button type="button" data-ng-click="vm.hit()" data-ng-disabled="!vm.player.canHit()" class="btn btn-default">Hit</button>
+      <button type="button" data-ng-click="vm.player.setStand()" data-ng-disabled="!vm.player.canStand()" class="btn btn-default">Stand</button>
     </div>
   </div>
-  
+
 </div>
