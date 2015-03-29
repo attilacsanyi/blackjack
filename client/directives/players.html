@@ -1,11 +1,4 @@
-<!--ol>
-  <li data-ng-repeat="player in players = (game.getPlayers() | filter : { isDealer: false})">
-    <a data-ng-link="player({ id: player.getId() })" data-ng-bind="player.getName()"></a>
-  </li>
-  <li data-ng-show="players.length == 0">No players</li>
-</ol-->
-
-<div data-ng-repeat="player in players = (game.getPlayers())">
+<div data-ng-repeat="player in players = (vm.game.getPlayers())">
   <div seed-player player="player"></div>
 </div>
 <p data-ng-show="players.length == 0">No players</p>

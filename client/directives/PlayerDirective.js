@@ -5,18 +5,39 @@
         .module('seedBlackjack')
         .directive('seedPlayer', PlayerDirective);
 
-    PlayerDirective.$inject = [];
+    PlayerDirective.$inject = ['$log'];
 
     //////////////////////////////
     // PLAYER DIRECTIVE
-    function PlayerDirective() {
-        return {
-              restrict: 'A',
-              scope: {
+    function PlayerDirective($log) {
+        var directive = {
+          restrict: 'A',
+          scope: {
                 player: '='
-              },
-              templateUrl: 'directives/player.html'
+          },
+          templateUrl: 'directives/player.html',
+          link: link,
+          controller: PlayerController,
+          controllerAs: 'vm',
+          bindToController: true // because the scope is isolated
         };
+        return directive;
+
+        function link(scope, element, attrs, vm) {
+          //$log.info('Player Directive');
+        }
+    }
+
+    PlayerController.$inject = ['$log'];
+
+    function PlayerController($log) {
+        var vm = this;
+        $log.info('Player Directive Controller');
+
+        var hit = function () {
+          $log.info(vm.player.getName() +  ' was hit');
+        };
+        vm.hit = hit;
     }
 
 })();
