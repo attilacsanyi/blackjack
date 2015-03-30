@@ -12,13 +12,16 @@
     function PlayerModel($log) {
 
         // Constructor
-        var Player = function (id, name, isDealer) {
+        var Player = function (id, name, dealer) {
             this.id = id;
             this.name = name;
-            this.isDealer = isDealer || false;
+            this.dealer = dealer || false;
             this.cards = [];                    // active cards[]:Card in the players hand
             this.score = 0;                     // after each round the score accumulated here
             this.stand = false;
+            this.winner = false;
+
+            this.dealerFilter = this.dealer;    // TODO: Ask about this
         };
 
         // Methods
@@ -57,8 +60,8 @@
             return !this.isBust() && !this.isStand() && this.getCardScore();
         };
 
-        Player.prototype.setStand = function () {
-            this.stand = true;
+        Player.prototype.hasCards = function () {
+            return this.cards.length;
         };
 
         // Getters
@@ -71,16 +74,39 @@
             return this.stand;
         };
 
+        Player.prototype.isWinner = function () {
+            return this.winner;
+        };
+
         Player.prototype.getName = function () {
             return this.name;
         };
 
         Player.prototype.isDealer = function () {
-            return this.isDealer;
+            return this.dealer;
         };
 
         Player.prototype.getScore = function () {
             return this.score;
+        };
+
+        Player.prototype.getCards = function () {
+            return this.cards;
+        };
+
+        // Setters
+
+        Player.prototype.setStand = function () {
+            this.stand = true;
+        };
+
+        Player.prototype.setWinner = function () {
+            this.winner = true;
+        };
+
+        // Filter attribute for angular
+        Player.prototype.dealerFilter = function () {
+            return this.dealerFilter();
         };
 
         return Player;

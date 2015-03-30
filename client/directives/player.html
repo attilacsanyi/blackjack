@@ -1,26 +1,43 @@
-<div class="panel" data-ng-class="{'panel-success': !vm.player.isBust(), 'panel-danger': vm.player.isBust()}">
+<div class="panel" data-ng-class="vm.getPanelColour()">
 
   <!-- Player Name -->
   <div class="panel-heading">
-    <a data-ng-link="player({ id: vm.player.getId() })">
-      <h3 class="panel-title" data-ng-bind="vm.player.getName()"></h3>
+
+    <!--a data-ng-link="player({ id: vm.player.getId() })">
+      <h3 class="panel-title"><i class="glyphicon glyphicon-user"></i> <span data-ng-bind="vm.player.getName()"></span></h3>
     </a>
-    <p data-ng-show="vm.player.isBust()"> Busted</p>
+    <p data-ng-show="vm.player.isBust()"> Busted</p-->
+
+    <h3 class="panel-title">
+      <i class="glyphicon glyphicon-user"></i>
+      <a data-ng-link="player({ id: vm.player.getId() })">
+        <span data-ng-bind="vm.player.getName()"></span>
+      </a>
+      <span data-ng-show="vm.player.isBust()"> - BUSTED!</span>
+    </h3>
   </div>
 
   <!-- Player details -->
-  <div class="panel-body">
+  <div data-ng-show="vm.player.hasCards()" class="panel-body">
     <ul>
       <li data-ng-bind="'Card Score: ' + vm.player.getCardScore()"></li>
     </ul>
   </div>
 
   <!-- Card operations -->
-  <div class="panel-footer">
-    <div class="btn-group" role="group" aria-label="card operations">
-      <button type="button" data-ng-click="vm.hit()" data-ng-disabled="!vm.player.canHit()" class="btn btn-default">Hit</button>
-      <button type="button" data-ng-click="vm.player.setStand()" data-ng-disabled="!vm.player.canStand()" class="btn btn-default">Stand</button>
+  <div data-ng-show="vm.player.hasCards() || vm.player.isDealer()" class="panel-footer">
+
+    <div class="btn-toolbar" role="toolbar" aria-label="card operations">
+      <div data-ng-show="vm.player.hasCards()" class="btn-group" role="group" aria-label="player card operations">
+        <button type="button" data-ng-click="vm.hit()" data-ng-disabled="!vm.player.canHit()" class="btn btn-default">Hit</button>
+        <button type="button" data-ng-click="vm.player.setStand()" data-ng-disabled="!vm.player.canStand()" class="btn btn-default">Stand</button>
+      </div>
+
+      <div data-ng-show="!vm.player.hasCards() &amp;&amp; vm.player.isDealer()" class="btn-group" role="group" aria-label="admin card operations">
+        <button type="button" data-ng-click="vm.dealTwoCards()" class="btn btn-default">Initial deal</button>
+      </div>
     </div>
+
   </div>
 
 </div>

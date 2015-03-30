@@ -41,6 +41,16 @@
             }
         };
 
+        Blackjack.prototype.dealTwoCards = function () {
+            $log.info('Deal 2 cards to all player');
+            var player;
+            for (var i = 0; i < this.players.length; i++) {
+                player = this.players[i];
+                player.addCard(this.deck.deal());
+                player.addCard(this.deck.deal());
+            }
+        };
+
         Blackjack.prototype.getPlayerById = function(playerId) {
             var player;
             for (var i = 0; i < this.players.length; i++) {

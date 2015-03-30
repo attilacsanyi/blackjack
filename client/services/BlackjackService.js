@@ -20,6 +20,7 @@
             addPlayers: addPlayers,
             getPlayerById: getPlayerById,
             dealCardToPlayer: dealCardToPlayer,
+            dealTwoCards: dealTwoCards,
             getPlayers: getPlayers,
             getDealer: getDealer,
             isGameStarted: isGameStarted
@@ -51,8 +52,12 @@
             game.dealCardToPlayer(playerId);
         }
 
+        function dealTwoCards() {
+            game.dealTwoCards();
+        }
+
         function getPlayers() {
-            return isGameStarted() ? $filter('filter')(game.getPlayers(), { isDealer: false }) : []; 
+            return isGameStarted() ? $filter('filter')(game.getPlayers(), { dealerFilter : false }) : []; 
         }
 
         function getDealer() {
