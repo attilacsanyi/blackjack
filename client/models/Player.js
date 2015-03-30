@@ -20,8 +20,6 @@
             this.score = 0;                     // after each round the score accumulated here
             this.stand = false;
             this.winner = false;
-
-            this.dealerFilter = this.dealer;    // TODO: Ask about this
         };
 
         // Methods
@@ -102,11 +100,6 @@
 
         Player.prototype.setWinner = function () {
             this.winner = true;
-        };
-
-        // Filter attribute for angular
-        Player.prototype.dealerFilter = function () {
-            return this.dealerFilter();
         };
 
         return Player;

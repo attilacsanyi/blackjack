@@ -19,6 +19,11 @@
 
         // View methods
 
+        var winners = function () {
+            return BlackjackService.findWinners();
+        };
+        vm.winners = winners;
+
     }
 
 })();

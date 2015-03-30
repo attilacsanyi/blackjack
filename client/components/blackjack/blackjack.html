@@ -7,6 +7,15 @@
 </div>
 
 <div data-ng-show="blackjack.game.isGameStarted()">
+
+  <div data-ng-hide="winners.length == 0">
+	  <h3>Winners</h3>
+	  <ul>
+	  	<li data-ng-repeat="winner in winners = blackjack.winners()" data-ng-bind="winner.name"></li>
+	  </ul>
+  </div>
+  <h3 data-ng-show="blackjack.game.isPush()">PUSH!</h3>
+
   <h3>Dealer</h3>
   <div data-seed-player data-player="blackjack.game.getDealer()"></div>
 
