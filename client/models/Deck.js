@@ -16,8 +16,8 @@
             this.cards = initCards();
         };
 
-        // Private methods 
-
+        // Private methods
+ 
         function initCards () {
             $log.info('Initialized Deck with cards');
             var blackJackCards = [];
@@ -49,7 +49,7 @@
             return selectedCards[0];
         };
 
-        return Deck;
+        return Deck; 
     }
 
 })();

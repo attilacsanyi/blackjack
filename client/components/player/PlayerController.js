@@ -5,7 +5,7 @@
         .module('seedBlackjack')
         .controller('PlayerController', PlayerController);
 
-    PlayerController.$inject = ['$routeParams', '$log', 'BlackjackService'];
+    PlayerController.$inject = [ '$routeParams', '$log', 'BlackjackService' ];
 
     //////////////////////////////
     // PLAYER CONTROLLER
@@ -14,6 +14,7 @@
         var vm = this;
 
         vm.self = BlackjackService.getPlayerById($routeParams.id);
+
     }
 
 })();

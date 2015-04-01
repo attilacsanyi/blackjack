@@ -14,7 +14,7 @@
 
     // Bootstrap UI Angular components
     'ui.bootstrap'
-    
+
   ]);
 
 })();

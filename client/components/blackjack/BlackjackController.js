@@ -5,7 +5,7 @@
         .module('seedBlackjack')
         .controller('BlackjackController', BlackjackController);
 
-    BlackjackController.$inject = ['$log', 'BlackjackService'];
+    BlackjackController.$inject = [ '$log', 'BlackjackService' ];
 
     //////////////////////////////
     // BLACKJACK CONTROLLER

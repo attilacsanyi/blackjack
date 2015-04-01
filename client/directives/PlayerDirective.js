@@ -5,7 +5,7 @@
         .module('seedBlackjack')
         .directive('seedPlayer', PlayerDirective);
 
-    PlayerDirective.$inject = ['$log'];
+    PlayerDirective.$inject = [ '$log' ];
 
     //////////////////////////////
     // PLAYER DIRECTIVE
@@ -48,10 +48,10 @@
 
         var getPanelColour = function() {
           return {
-            "panel-info": (vm.player) ? vm.player.isDealer() : false,
-            "panel-success": (vm.player) ? vm.player.isWinner() : false,
-            "panel-danger": (vm.player) ? vm.player.isBust() : false,
-            "panel-warning": (vm.player) ? !(vm.player.isDealer() || vm.player.isWinner() || vm.player.isBust()) : false
+            'panel-info': (vm.player) ? vm.player.isDealer() : false,
+            'panel-success': (vm.player) ? vm.player.isWinner() : false,
+            'panel-danger': (vm.player) ? vm.player.isBust() : false,
+            'panel-warning': (vm.player) ? !(vm.player.isDealer() || vm.player.isWinner() || vm.player.isBust()) : false
           };
         };
         vm.getPanelColour = getPanelColour;

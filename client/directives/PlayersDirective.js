@@ -28,7 +28,7 @@
         }
     }
 
-    PlayersController.$inject = ['$log'];
+    PlayersController.$inject = [ '$log' ];
 
     function PlayersController($log) {
         var vm = this;

@@ -1,20 +1,20 @@
 (function() {
-    'use strict';
+  'use strict';
 
-    angular
-    .module('seedBlackjack')
-    .controller('AppController', AppController);
+  angular
+  .module('seedBlackjack')
+  .controller('AppController', AppController);
 
-    AppController.$inject = ['$scope', '$router', '$location', '$log', '$modal', 'BlackjackService'];
+  AppController.$inject = [ '$scope', '$router', '$location', '$log', '$modal', 'BlackjackService' ];
 
-    //////////////////////////////
-    // APP CONTROLLER
-    function AppController($scope, $router, $location, $log, $modal, BlackjackService) {
-        var vm = this;
-        $log.info('Init AppController');
+  //////////////////////////////
+  // APP CONTROLLER
+  function AppController($scope, $router, $location, $log, $modal, BlackjackService) {
+    var vm = this;
+    $log.info('Init AppController');
 
-        // Define App Routing
-        $router.config([
+    // Define App Routing
+    $router.config([
           {
             path: '/',
             component: 'blackjack'
@@ -24,38 +24,38 @@
             component: 'player'
           }
         ]);
-        $location.path('/');
+    $location.path('/');
 
-        // View models
-        vm.title = 'Seed Blackjack';
-        vm.isGameStarted = false;
+    // View models
+    vm.title = 'Seed Blackjack';
+    vm.isGameStarted = false;
 
-        // New Game Modal
-        vm.openNewGameModal = function(size) {
-            return $scope.openNewGameModal(size);   
-        };
+    // New Game Modal
+    vm.openNewGameModal = function(size) {
+      return $scope.openNewGameModal(size);
+    };
 
-        $scope.openNewGameModal = function (size) {
+    $scope.openNewGameModal = function(size) {
 
-            var newGameModalInstance = $modal.open({
-                templateUrl: 'modals/newGameModal.html',
-                controller: 'NewGameModalController as vm',
-                size: size
-            });
+      var newGameModalInstance = $modal.open({
+        templateUrl: 'modals/newGameModal.html',
+        controller: 'NewGameModalController as vm',
+        size: size
+      });
 
-            newGameModalInstance.result.then(function (isGameStarted) {
-                vm.isGameStarted = isGameStarted;
-            }, function (reason) {
-                $log.info('Closed New Game modal with reason: ' + JSON.stringify(reason));
-            });
-        };
+      newGameModalInstance.result.then(function(isGameStarted) {
+        vm.isGameStarted = isGameStarted;
+      }, function(reason) {
+        $log.info('Closed New Game modal with reason: ' + JSON.stringify(reason));
+      });
+    };
 
-        // Save Game
-        var saveGame = function () {
-            BlackjackService.saveGame();
-        };
-        vm.saveGame = saveGame;
+    // Save Game
+    var saveGame = function() {
+      BlackjackService.saveGame();
+    };
+    vm.saveGame = saveGame;
 
-    }
+  }
 
 })();

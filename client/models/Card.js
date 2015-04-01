@@ -1,11 +1,11 @@
 (function() {
-    'use strict';
+  'use strict';
 
     angular
         .module('seedBlackjack')
         .factory('Card', CardModel);
 
-    CardModel.$inject = ['$log'];
+        CardModel.$inject = [ '$log' ];
 
     //////////////////////////////
     // CARD
