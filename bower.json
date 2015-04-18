@@ -1,8 +1,8 @@
 {
   "name": "blackjack",
-  "description": "Seed Blackjack Test",
+  "description": "Blackjack Game",
   "version": "1.0.0",
-  "homepage": "https://github.com/attilacsanyi/seed-blackjack",
+  "homepage": "https://github.com/attilacsanyi/blackjack",
   "license": "MIT",
   "private": true,
   "dependencies": {

@@ -27,7 +27,7 @@
     $location.path('/');
 
     // View models
-    vm.title = 'Seed Blackjack';
+    vm.title = 'Blackjack';
     vm.isGameStarted = false;
 
     // New Game Modal

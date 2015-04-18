@@ -3,7 +3,7 @@
 
     angular
         .module('blackjack')
-        .directive('seedPlayer', PlayerDirective);
+        .directive('bjPlayer', PlayerDirective);
 
     PlayerDirective.$inject = [ '$log' ];
 

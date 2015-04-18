@@ -3,7 +3,7 @@
 
     angular
         .module('blackjack')
-        .directive('seedPlayers', PlayersDirective);
+        .directive('bjPlayers', PlayersDirective);
 
     PlayersDirective.$inject = [];
 
