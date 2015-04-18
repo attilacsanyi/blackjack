@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('seedBlackjack')
+        .module('blackjack')
         .directive('seedPlayer', PlayerDirective);
 
     PlayerDirective.$inject = [ '$log' ];

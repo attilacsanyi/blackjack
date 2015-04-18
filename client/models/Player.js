@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('seedBlackjack')
+        .module('blackjack')
         .factory('Player', PlayerModel);
 
     PlayerModel.$inject = ['$log'];

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('seedBlackjack')
+        .module('blackjack')
         .service('BlackjackService', BlackjackService);
 
     BlackjackService.$inject = ['$log', '$filter', 'Blackjack', 'Player'];

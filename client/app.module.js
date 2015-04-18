@@ -7,7 +7,7 @@
   //
   // Code Styleguide:
   //      https://github.com/johnpapa/angularjs-styleguide#iife
-  angular.module('seedBlackjack', [
+  angular.module('blackjack', [
 
     // Angular new router
     'ngNewRouter',

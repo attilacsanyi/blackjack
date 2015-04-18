@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('seedBlackjack')
+        .module('blackjack')
         .controller('NewGameModalController', NewGameModalController);
 
     NewGameModalController.$inject = ['$modalInstance', 'BlackjackService', '$log'];

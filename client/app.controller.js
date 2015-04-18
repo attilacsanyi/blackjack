@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-  .module('seedBlackjack')
+  .module('blackjack')
   .controller('AppController', AppController);
 
   AppController.$inject = [ '$scope', '$router', '$location', '$log', '$modal', 'BlackjackService' ];

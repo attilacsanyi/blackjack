@@ -1,2 +1,1 @@
-# seed-blackjack
-Seed Blackjack Test
+# Simple Blackjack Game
